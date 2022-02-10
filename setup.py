@@ -13,7 +13,7 @@ def parse_requirements(file):
 
 
 def get_version():
-    for line in open(os.path.join(os.path.dirname(__file__), 'sentinelhub', '_version.py')):
+    for line in open(os.path.join(os.path.dirname(__file__), 'wfs_sentinelhub', '_version.py')):
         if line.find("__version__") >= 0:
             version = line.split("=")[1].strip()
             return version.strip('"').strip("'")
@@ -72,7 +72,7 @@ setup(
     description='Sentinel Hub Utilities',
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
-    url='https://github.com/sentinel-hub/sentinelhub-py',
+    url='https://github.com/vitsyrovat/wfs-sentinelhub',
     author='Sinergise ltd.',
     author_email='info@sentinel-hub.com',
     license='MIT',
