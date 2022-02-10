@@ -66,7 +66,7 @@ def try_create_config_file():
 update_package_config()
 
 setup(
-    name='wfs-sentinelhub',
+    name='wfs_sentinelhub',
     python_requires='>=3.7',
     version=get_version(),
     description='Sentinel Hub Utilities',
@@ -77,7 +77,7 @@ setup(
     author_email='info@sentinel-hub.com',
     license='MIT',
     packages=find_packages(),
-    package_data={'sentinelhub': ['sentinelhub/config.json', 'sentinelhub/.utmzones.geojson']},
+    package_data={'wfs_sentinelhub': ['sentinelhub/config.json', 'sentinelhub/.utmzones.geojson']},
     include_package_data=True,
     install_requires=parse_requirements('requirements.txt'),
     extras_require={
@@ -85,10 +85,10 @@ setup(
         'DOCS': parse_requirements('requirements-docs.txt')
     },
     zip_safe=False,
-    entry_points={'console_scripts': ['sentinelhub=sentinelhub.commands:main_help',
-                                      'sentinelhub.aws=sentinelhub.commands:aws',
-                                      'sentinelhub.config=sentinelhub.commands:config',
-                                      'sentinelhub.download=sentinelhub.commands:download']},
+    entry_points={'console_scripts': ['wfs_sentinelhub=sentinelhub.commands:main_help',
+                                      'wfs_sentinelhub.aws=sentinelhub.commands:aws',
+                                      'wfs_sentinelhub.config=sentinelhub.commands:config',
+                                      'wfs_sentinelhub.download=sentinelhub.commands:download']},
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
