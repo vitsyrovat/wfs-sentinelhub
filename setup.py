@@ -13,7 +13,7 @@ def parse_requirements(file):
 
 
 def get_version():
-    for line in open(os.path.join(os.path.dirname(__file__), 'sentinelhub', '_version.py')):
+    for line in open(os.path.join(os.path.dirname(__file__), 'wfs_sentinelhub', '_version.py')):
         if line.find("__version__") >= 0:
             version = line.split("=")[1].strip()
             return version.strip('"').strip("'")
@@ -34,7 +34,7 @@ def update_package_config():
         import sys
         import json
 
-        path = importlib.machinery.PathFinder().find_spec('sentinelhub', sys.path[1:]).submodule_search_locations[0]
+        path = importlib.machinery.PathFinder().find_spec('wfs_sentinelhub', sys.path[1:]).submodule_search_locations[0]
         old_config_filename = os.path.join(path, 'config.json')
 
         with open(old_config_filename, 'r') as file:
@@ -85,10 +85,10 @@ setup(
         'DOCS': parse_requirements('requirements-docs.txt')
     },
     zip_safe=False,
-    entry_points={'console_scripts': ['wfs_sentinelhub=sentinelhub.commands:main_help',
-                                      'wfs_sentinelhub.aws=sentinelhub.commands:aws',
-                                      'wfs_sentinelhub.config=sentinelhub.commands:config',
-                                      'wfs_sentinelhub.download=sentinelhub.commands:download']},
+    entry_points={'console_scripts': ['sentinelhub=sentinelhub.commands:main_help',
+                                      'sentinelhub.aws=sentinelhub.commands:aws',
+                                      'sentinelhub.config=sentinelhub.commands:config',
+                                      'sentinelhub.download=sentinelhub.commands:download']},
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
