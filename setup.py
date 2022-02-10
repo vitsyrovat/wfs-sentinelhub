@@ -66,7 +66,7 @@ def try_create_config_file():
 update_package_config()
 
 setup(
-    name='sentinelhub',
+    name='wfs-sentinelhub',
     python_requires='>=3.7',
     version=get_version(),
     description='Sentinel Hub Utilities',
